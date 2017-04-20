@@ -12,6 +12,7 @@ namespace wmc.module.commands.slant
         //determine slant for the article within the corpus
         public static double determineSlant(CorpusSegment cs, WordList wl)
         {
+            //the ToLower() gets rid of any character case issues
             int positiveCount = wl.GoodList.Count(s => cs.contentM.ToLower().Contains(s.ToLower()));
             int topicalCount = wl.TopicalList.Count(s => cs.contentM.ToLower().Contains(s.ToLower()));
             int badCount = wl.BadList.Count(s => cs.contentM.ToLower().Contains(s.ToLower()));
@@ -29,6 +30,7 @@ namespace wmc.module.commands.slant
 
         public static double determineSlant(Corpus c, WordList wl)
         {
+            //the ToLower() gets rid of any character case issues
             int positiveCount = 0;
             int topicalCount = 0;
             int badCount = 0;
@@ -72,7 +74,7 @@ namespace wmc.module.commands.slant
                 "Topical        Value:  " + profilic + "\n" +
                 "Negative Slant Value: " + bad + "\n" +
                 "k-Slant Score:    " + calcKSlant(good, bad, profilic) + "\n" +
-                "---------------------------------\n");
+                "---------------------------------\n";
             return toPrint;
         }
 
