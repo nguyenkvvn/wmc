@@ -72,7 +72,7 @@ namespace wmc.module.components.WordList
             return true;
         }
 
-        public String ToString()
+        public override String ToString()
         {
             String outString = "";
 

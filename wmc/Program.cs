@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using wmc.module.commands.slant;
 using wmc.module.components.WordList;
 
 namespace wmc
@@ -36,8 +37,16 @@ namespace wmc
             }*/
 
             //WORDLIST debug
-            WordList wordlist = new WordList(args[3]);
-            Console.Write(wordlist.ToString());
+            //WordList wordlist = new WordList(args[0]);
+            //Console.Write(wordlist.ToString());
+
+            //slant/Corpus debug
+            Corpus corpus = new Corpus(args[1]);
+            //slant/Corpus/CorpusSegment debug
+            //Console.WriteLine(corpus.CorpusSegments[0].filename + "\t" + corpus.CorpusSegments[0].contentM);
+
+            //slant calc debug
+            Console.WriteLine(Slant.determineSlant(corpus, new WordList(args[2])));
 
             Console.ReadKey();
         }
